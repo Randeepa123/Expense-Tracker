@@ -57,7 +57,7 @@ class MainActivity : AppCompatActivity() {
     private fun replaceFragment(fragment: Fragment): Boolean{
 
         supportFragmentManager.beginTransaction()
-        .replace(R.id.main,fragment)
+        .replace(R.id.frame,fragment)
         .commit()
 
         return true
@@ -80,7 +80,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun restoreBottomNavigationSelection() {
-        val currentFragment = supportFragmentManager.findFragmentById(R.id.main)
+        val currentFragment = supportFragmentManager.findFragmentById(R.id.frame)
 
         when (currentFragment) {
             is HomeFragment -> mainBinding.bottomNavigationView.selectedItemId = R.id.home_icon

@@ -2,5 +2,5 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
-    <color name="nav_barcolor">#3C5C61FF</color>
+    <color name="nav_barcolor">#80bf64</color>
 </resources>
