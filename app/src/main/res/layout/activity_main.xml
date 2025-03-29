@@ -25,7 +25,6 @@
         android:layout_marginTop="60dp" />
 
 
-
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottomNavigationView"
         android:layout_width="match_parent"
@@ -38,6 +37,7 @@
         app:itemTextColor="#CC9898"
         app:labelVisibilityMode="unlabeled"
         app:itemRippleColor="@color/white"
-        app:menu="@menu/nav_menu" />
+        app:menu="@menu/nav_menu"
+        android:elevation="10dp"/>
 
 </RelativeLayout>

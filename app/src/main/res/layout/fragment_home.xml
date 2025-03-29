@@ -23,48 +23,82 @@
         android:layout_marginBottom="800dp"
         android:orientation="horizontal">
 
-        <TextView
+        <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_margin="5dp"
             android:layout_weight="1"
-            android:text="Day"
-            android:textColor="@color/nav_clicked"
-            android:textSize="23dp"
-            android:textStyle="bold"
-            android:background="@drawable/rounded_card_corners"
-            android:textAlignment="center"
-            android:paddingTop="15dp"
+            app:cardCornerRadius="10dp"
+            app:cardElevation="4dp">
 
-            />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/rounded_card_corners"
+                android:paddingTop="15dp"
+                android:text="Day"
+                android:textAlignment="center"
+                android:textColor="@color/nav_clicked"
+                android:textSize="23dp"
+                android:textStyle="bold"
 
-        <TextView
+
+                />
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_margin="5dp"
             android:layout_weight="1"
-            android:background="@drawable/rounded_card_corners"
-            android:text="Week"
-            android:textColor="@color/nav_clicked"
-            android:textSize="23dp"
-            android:textStyle="bold"
-            android:textAlignment="center"
-            android:paddingTop="15dp"
+            app:cardCornerRadius="10dp"
+            app:cardElevation="4dp">
 
-            />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/rounded_card_corners"
+                android:paddingTop="15dp"
+                android:text="Week"
+                android:textAlignment="center"
+                android:textColor="@color/nav_clicked"
+                android:textSize="23dp"
+                android:textStyle="bold"
 
-        <TextView
+                />
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_margin="5dp"
+            android:layout_marginEnd="5dp"
             android:layout_weight="1"
-            android:background="@drawable/rounded_card_corners"
-            android:text="Month"
-            android:textColor="@color/nav_clicked"
-            android:textSize="23dp"
-            android:textStyle="bold"
-            android:textAlignment="center"
-            android:paddingTop="15dp"/>
+            app:cardCornerRadius="10dp"
+            app:cardElevation="4dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/rounded_card_corners"
+                android:paddingTop="15dp"
+                android:text="Month"
+                android:textAlignment="center"
+                android:textColor="@color/nav_clicked"
+                android:textSize="23dp"
+                android:textStyle="bold" />
+        </androidx.cardview.widget.CardView>
 
     </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Expenses"
+        android:textStyle="bold"
+        android:textSize="25dp"
+        android:textColor="@color/black"
+        android:layout_marginTop="230dp"
+        android:layout_marginLeft="10dp"/>
+
 </FrameLayout>
