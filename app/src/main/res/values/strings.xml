@@ -7,4 +7,7 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="Add_Expense">Add Expense</string>
+    <string name="title_Expenses">Expenses</string>
+    <string name="title_Home">Home</string>
+    <string name="card_Day" />
 </resources>

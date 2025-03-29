@@ -4,4 +4,5 @@
     <color name="white">#FFFFFFFF</color>
     <color name="nav_barcolor">#80bf64</color>
     <color name="card_colors">#a4c639</color>
+    <color name="Expens_card_colour">#a4c639</color>
 </resources>

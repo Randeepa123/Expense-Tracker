@@ -7,13 +7,15 @@
     tools:context=".HomeFragment">
 
     <TextView
+        android:id="@+id/title_Home"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Home"
-        android:textStyle="bold"
-        android:textSize="35dp"
+        android:layout_margin="10dp"
+        android:layout_marginStart="10dp"
+        android:text="@string/title_Home"
         android:textColor="@color/black"
-        android:layout_margin="10dp"/>
+        android:textSize="35sp"
+        android:textStyle="bold" />
 
     <LinearLayout
 
@@ -21,7 +23,10 @@
         android:layout_height="150dp"
         android:layout_marginTop="65dp"
         android:layout_marginBottom="800dp"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        >
 
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
@@ -39,7 +44,7 @@
                 android:text="Day"
                 android:textAlignment="center"
                 android:textColor="@color/nav_clicked"
-                android:textSize="23dp"
+                android:textSize="23sp"
                 android:textStyle="bold"
 
 
@@ -62,7 +67,7 @@
                 android:text="Week"
                 android:textAlignment="center"
                 android:textColor="@color/nav_clicked"
-                android:textSize="23dp"
+                android:textSize="23sp"
                 android:textStyle="bold"
 
                 />
@@ -85,20 +90,191 @@
                 android:text="Month"
                 android:textAlignment="center"
                 android:textColor="@color/nav_clicked"
-                android:textSize="23dp"
+                android:textSize="23sp"
                 android:textStyle="bold" />
         </androidx.cardview.widget.CardView>
 
     </LinearLayout>
 
     <TextView
+        android:id="@+id/title_expenses"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Expenses"
-        android:textStyle="bold"
-        android:textSize="25dp"
-        android:textColor="@color/black"
+        android:layout_marginStart="10dp"
         android:layout_marginTop="230dp"
-        android:layout_marginLeft="10dp"/>
+        android:layout_marginEnd="10dp"
+        android:text="@string/title_Expenses"
+        android:textColor="@color/black"
+        android:textSize="25sp"
+        android:textStyle="bold" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        android:layout_marginTop="270dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp">
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardElevation="8dp"
+                android:layout_marginBottom="15dp"
+                app:cardCornerRadius="10dp"
+                android:id="@+id/expenseCard1">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:text="Expense01"
+                    android:textStyle="bold"
+                    android:textSize="20sp"
+                    android:background="@drawable/expenses_cards"
+                    android:gravity="center"
+                    />
+
+            </androidx.cardview.widget.CardView>
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardElevation="8dp"
+                android:layout_marginBottom="15dp"
+                app:cardCornerRadius="10dp"
+                android:id="@+id/expenseCard2">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:text="Expense02"
+                    android:textStyle="bold"
+                    android:textSize="20sp"
+                    android:background="@drawable/expenses_cards"
+                    android:gravity="center"
+                    />
+
+            </androidx.cardview.widget.CardView>
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardElevation="8dp"
+                android:layout_marginBottom="15dp"
+                android:id="@+id/expenseCard3"
+                app:cardCornerRadius="10dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:text="Expense03"
+                    android:textStyle="bold"
+                    android:textSize="20sp"
+                    android:background="@drawable/expenses_cards"
+                    android:gravity="center"
+                    />
+
+            </androidx.cardview.widget.CardView>
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardElevation="8dp"
+                android:layout_marginBottom="15dp"
+                android:id="@+id/expenseCard4"
+                app:cardCornerRadius="10dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:text="Expense04"
+                    android:textStyle="bold"
+                    android:textSize="20sp"
+                    android:background="@drawable/expenses_cards"
+                    android:gravity="center"
+                    />
+
+            </androidx.cardview.widget.CardView>
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardElevation="8dp"
+                android:layout_marginBottom="15dp"
+                android:id="@+id/expenseCard5"
+                app:cardCornerRadius="10dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:text="Expense05"
+                    android:textStyle="bold"
+                    android:textSize="20sp"
+                    android:background="@drawable/expenses_cards"
+                    android:gravity="center"
+                    />
+
+            </androidx.cardview.widget.CardView>
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardElevation="8dp"
+                android:layout_marginBottom="15dp"
+                android:id="@+id/expenseCard6"
+                app:cardCornerRadius="10dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:text="Expense06"
+                    android:textStyle="bold"
+                    android:textSize="20sp"
+                    android:background="@drawable/expenses_cards"
+                    android:gravity="center"
+                    />
+
+            </androidx.cardview.widget.CardView>
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardElevation="8dp"
+                android:layout_marginBottom="15dp"
+                android:id="@+id/expenseCard7"
+                app:cardCornerRadius="10dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:text="Expense07"
+                    android:textStyle="bold"
+                    android:textSize="20sp"
+                    android:background="@drawable/expenses_cards"
+                    android:gravity="center"
+                    />
+
+            </androidx.cardview.widget.CardView>
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardElevation="8dp"
+                android:layout_marginBottom="15dp"
+                android:id="@+id/expenseCard8"
+                app:cardCornerRadius="10dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:text="Expense08"
+                    android:textStyle="bold"
+                    android:textSize="20sp"
+                    android:background="@drawable/expenses_cards"
+                    android:gravity="center"
+                    />
+
+            </androidx.cardview.widget.CardView>
+        </LinearLayout>
+    </ScrollView>
+
 
 </FrameLayout>
