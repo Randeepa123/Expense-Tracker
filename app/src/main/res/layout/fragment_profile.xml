@@ -22,10 +22,10 @@
     <!-- Profile Icon -->
     <ImageView
         android:id="@+id/ivProfileIcon"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
         android:layout_marginTop="24dp"
-        android:background="@drawable/circle_outline"
+        android:src="@drawable/account2"
         app:layout_constraintBottom_toTopOf="@+id/tvNameLabel"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -157,7 +157,7 @@
         android:id="@+id/tvAchievementsTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="48dp"
+        android:layout_marginTop="10dp"
         android:text="Achievements"
         android:textColor="@color/black"
         android:textSize="24sp"
@@ -168,9 +168,15 @@
     <!-- Achievement Icons -->
     <HorizontalScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="16dp"
         android:scrollbars="none"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvAchievementsTitle">
 
         <LinearLayout
@@ -213,7 +219,7 @@
                     android:layout_width="100dp"
                     android:layout_height="100dp"
                     android:padding="12dp"
-                    android:src="@drawable/ic_goal_hourglass" />
+                    android:src="@drawable/goal2" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -233,11 +239,11 @@
                 android:orientation="vertical">
 
                 <ImageView
-                    android:layout_width="60dp"
-                    android:layout_height="60dp"
-                    android:background="@drawable/goal_circles"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+
                     android:padding="12dp"
-                    android:src="@drawable/ic_goal_target" />
+                    android:src="@drawable/goal3" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -257,11 +263,10 @@
                 android:orientation="vertical">
 
                 <ImageView
-                    android:layout_width="60dp"
-                    android:layout_height="60dp"
-                    android:background="@drawable/goal_circles"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
                     android:padding="12dp"
-                    android:src="@drawable/ic_goal_rocket" />
+                    android:src="@drawable/goal4" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -280,11 +285,10 @@
                 android:orientation="vertical">
 
                 <ImageView
-                    android:layout_width="60dp"
-                    android:layout_height="60dp"
-                    android:background="@drawable/goal_circles"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
                     android:padding="12dp"
-                    android:src="@drawable/ic_goal_folder" />
+                    android:src="@drawable/goal05" />
 
                 <TextView
                     android:layout_width="wrap_content"
