@@ -10,4 +10,16 @@
     <string name="title_Expenses">Expenses</string>
     <string name="title_Home">Home</string>
     <string name="card_Day" />
+    <string-array name="cashcat">
+        <item>Cash</item>
+        <item>Card</item>
+    </string-array>
+    <string-array name="shoppincat">
+        <item>Food</item>
+        <item>Transport</item>
+        <item>Shopping</item>
+        <item>Entertainment</item>
+        <item>Health</item>
+        <item>Other</item>
+    </string-array>
 </resources>
