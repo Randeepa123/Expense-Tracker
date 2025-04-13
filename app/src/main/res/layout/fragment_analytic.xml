@@ -11,7 +11,7 @@
         android:id="@+id/tvStatsTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Stats"
+        android:text="@string/Stats"
         android:textColor="@color/black"
         android:textSize="28sp"
         android:textStyle="bold"
@@ -24,9 +24,15 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:text="Expenses"
+        android:text="@string/Expenses"
         android:textColor="@color/black"
+        android:paddingStart="16dp"
+        android:paddingTop="8dp"
+        android:paddingEnd="16dp"
+        android:paddingBottom="8dp"
         android:textSize="20sp"
+        android:background="@drawable/rounded_button_light_green"
+        android:drawableEnd="@drawable/ic_dropdown"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvStatsTitle" />
 
@@ -41,205 +47,212 @@
         android:paddingTop="8dp"
         android:paddingEnd="16dp"
         android:paddingBottom="8dp"
-        android:text="Week"
+        android:text="@string/Week"
         android:textColor="@color/black"
         app:layout_constraintBottom_toBottomOf="@+id/tvExpensesLabel"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@+id/tvExpensesLabel" />
 
     <!-- Bar Chart Container -->
-    <LinearLayout
+    <FrameLayout
         android:id="@+id/barChartContainer"
         android:layout_width="match_parent"
-        android:layout_height="200dp"
+        android:layout_height="250dp"
         android:layout_marginTop="24dp"
+        android:layout_marginBottom="16dp"
         android:gravity="bottom"
         android:orientation="horizontal"
+        app:layout_constraintBottom_toTopOf="@+id/scrollView2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvExpensesLabel">
-
-        <!-- Bar 1 -->
-        <LinearLayout
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:gravity="bottom|center_horizontal"
-            android:orientation="vertical">
-
-            <View
-                android:layout_width="24dp"
-                android:layout_height="60dp"
-                android:background="@drawable/rounded_bar_pink" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:text="1"
-                android:textColor="@color/black" />
-        </LinearLayout>
-
-        <!-- Bar 2 -->
-        <LinearLayout
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:gravity="bottom|center_horizontal"
-            android:orientation="vertical">
-
-            <View
-                android:layout_width="24dp"
-                android:layout_height="40dp"
-                android:background="@drawable/rounded_bar_blue" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:text="2"
-                android:textColor="@color/black" />
-        </LinearLayout>
-
-        <!-- Bar 3 -->
-        <LinearLayout
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:gravity="bottom|center_horizontal"
-            android:orientation="vertical">
-
-            <View
-                android:layout_width="24dp"
-                android:layout_height="150dp"
-                android:background="@drawable/rounded_bar_yellow" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:text="3"
-                android:textColor="@color/black" />
-        </LinearLayout>
-
-        <!-- Bar 4 -->
-        <LinearLayout
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:gravity="bottom|center_horizontal"
-            android:orientation="vertical">
-
-            <View
-                android:layout_width="24dp"
-                android:layout_height="0dp"
-                android:layout_weight="100"
-                android:background="@drawable/rounded_bar_green" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:text="4"
-                android:textColor="@color/black" />
-        </LinearLayout>
-
-        <!-- Bar 5 -->
-        <LinearLayout
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:gravity="bottom|center_horizontal"
-            android:orientation="vertical">
-
-            <View
-                android:layout_width="24dp"
-                android:layout_height="120dp"
-                android:background="@drawable/rounded_bar_purple" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:text="5"
-                android:textColor="@color/black" />
-        </LinearLayout>
-
-        <!-- Bar 6 -->
-        <LinearLayout
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:gravity="bottom|center_horizontal"
-            android:orientation="vertical">
-
-            <View
-                android:layout_width="24dp"
-                android:layout_height="10dp"
-
-                android:background="@drawable/rounded_bar_cyan" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:text="6"
-                android:textColor="@color/black" />
-        </LinearLayout>
-
-        <!-- Bar 7 -->
-        <LinearLayout
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:gravity="bottom|center_horizontal"
-            android:orientation="vertical">
-
-            <View
-                android:layout_width="24dp"
-                android:layout_height="70dp"
-
-                android:background="@drawable/rounded_bar_orange" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:text="7"
-                android:textColor="@color/black" />
-        </LinearLayout>
-    </LinearLayout>
-
-    <!-- Horizontal Line -->
-    <View
-        android:id="@+id/horizontalLine"
+    <FrameLayout
+        android:id="@+id/barChartFragment"
         android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:layout_marginBottom="10dp"
-        android:background="@color/grey"
-        app:layout_constraintBottom_toBottomOf="@+id/barChartContainer"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/barChartContainer"
-        app:layout_constraintVertical_bias="0.15" />
+        android:layout_height="250dp"
+        android:background="@drawable/graphbackground">
+
+        <LinearLayout
+
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_marginTop="24dp"
+            android:gravity="bottom"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvExpensesLabel">
+
+            <!-- Bar 1 -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="bottom|center_horizontal"
+                android:orientation="vertical">
+
+                <View
+                    android:layout_width="24dp"
+                    android:layout_height="60dp"
+                    android:background="@drawable/rounded_bar_pink" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="1"
+                    android:textColor="@color/black" />
+            </LinearLayout>
+
+            <!-- Bar 2 -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="bottom|center_horizontal"
+                android:orientation="vertical">
+
+                <View
+                    android:layout_width="24dp"
+                    android:layout_height="40dp"
+                    android:background="@drawable/rounded_bar_blue" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="2"
+                    android:textColor="@color/black" />
+            </LinearLayout>
+
+            <!-- Bar 3 -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="bottom|center_horizontal"
+                android:orientation="vertical">
+
+                <View
+                    android:layout_width="24dp"
+                    android:layout_height="150dp"
+                    android:background="@drawable/rounded_bar_yellow" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="3"
+                    android:textColor="@color/black" />
+            </LinearLayout>
+
+            <!-- Bar 4 -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="bottom|center_horizontal"
+                android:orientation="vertical">
+
+                <View
+                    android:layout_width="24dp"
+                    android:layout_height="0dp"
+                    android:layout_weight="100"
+                    android:background="@drawable/rounded_bar_green" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="4"
+                    android:textColor="@color/black" />
+            </LinearLayout>
+
+            <!-- Bar 5 -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="bottom|center_horizontal"
+                android:orientation="vertical">
+
+                <View
+                    android:layout_width="24dp"
+                    android:layout_height="120dp"
+                    android:background="@drawable/rounded_bar_purple" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="5"
+                    android:textColor="@color/black" />
+            </LinearLayout>
+
+            <!-- Bar 6 -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="bottom|center_horizontal"
+                android:orientation="vertical">
+
+                <View
+                    android:layout_width="24dp"
+                    android:layout_height="10dp"
+
+                    android:background="@drawable/rounded_bar_cyan" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="6"
+                    android:textColor="@color/black" />
+            </LinearLayout>
+
+            <!-- Bar 7 -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="bottom|center_horizontal"
+                android:orientation="vertical">
+
+                <View
+                    android:layout_width="24dp"
+                    android:layout_height="70dp"
+
+                    android:background="@drawable/rounded_bar_orange" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="7"
+                    android:textColor="@color/black" />
+            </LinearLayout>
+        </LinearLayout>
+    </FrameLayout>
+    </FrameLayout>
 
     <ScrollView
+        android:id="@+id/scrollView2"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
+        android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
-        android:layout_marginTop="15dp"
+        android:layout_marginTop="5dp"
         android:layout_marginEnd="20dp"
-        android:layout_marginBottom="5dp"
+        android:layout_marginBottom="20dp"
         android:fillViewport="true"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/horizontalLine">
+        app:layout_constraintTop_toBottomOf="@+id/barChartContainer">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
             android:orientation="vertical"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/barChartContainer">
@@ -279,15 +292,15 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Transportation"
+                            android:text="@string/Transportation"
                             android:textColor="@color/black"
                             android:textSize="16sp" />
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Cash"
-                            android:textColor="@color/grey"
+                            android:text="@string/Cash"
+                            android:textColor="@color/black"
                             android:textSize="12sp" />
                     </LinearLayout>
 
@@ -335,15 +348,15 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Gifts"
+                            android:text="@string/Gifts"
                             android:textColor="@color/black"
                             android:textSize="16sp" />
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Card"
-                            android:textColor="@color/grey"
+                            android:text="@string/Card"
+                            android:textColor="@color/black"
                             android:textSize="12sp" />
                     </LinearLayout>
 
@@ -391,15 +404,15 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Food"
+                            android:text="@string/Food"
                             android:textColor="@color/black"
                             android:textSize="16sp" />
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Cash"
-                            android:textColor="@color/grey"
+                            android:text="@string/Cash"
+                            android:textColor="@color/black"
                             android:textSize="12sp" />
                     </LinearLayout>
 

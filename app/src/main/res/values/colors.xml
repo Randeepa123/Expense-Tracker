@@ -9,4 +9,14 @@
     <color name="light_red">#FFC8C8</color>
     <color name="light_yellow">#FFF2CC</color>
     <color name="grey">#bcbcbc</color>
+    <color name="pink">#e4b6cb</color>
+    <color name="nav_clicked">#153606</color>
+    <color name="nav_notclicked">#417729</color>
+    <color name="lightgreen">#baf0c9</color>
+    <color name="orange">#f6b26b</color>
+    <color name="darkpink">#FFCFBF</color>
+    <color name="purple">#b4a7d6</color>
+    <color name="lightblue">#E6F0FF</color>
+    <color name="buttonlightgreen">#E1FFD8</color>
+
 </resources>
