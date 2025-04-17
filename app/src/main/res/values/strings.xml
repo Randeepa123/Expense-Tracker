@@ -12,6 +12,7 @@
     <string name="cash">Cash</string>
     <string name="shopping">Shopping</string>
     <string name="Add_New_Expenses">Add New Expenses</string>
+    <string name="Add_New_Income">Add New Income</string>
     <string name="Rupees">Rs</string>
     <string name="amount">1820.00</string>
     <string name="Stats">Stats</string>
@@ -34,5 +35,17 @@
     <string name="Update">Update</string>
     <string name="Cancel">Cancel</string>
     <string name="Achievements">Achievements</string>
+
+    <string-array name="ExpenseOrIncomeArray">
+        <item>Income</item>
+        <item>Expense</item>
+    </string-array>
+
+    <string-array name="category">
+        <item>Shopping</item>
+        <item>Transport</item>
+        <item>Food</item>
+        <item>Gifts</item>
+    </string-array>
 
 </resources>
