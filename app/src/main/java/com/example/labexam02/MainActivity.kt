@@ -5,12 +5,14 @@ import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
 import android.view.Gravity
+import android.view.View
 import android.view.ViewGroup
 import android.view.Window
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import androidx.fragment.app.DialogFragment
 import androidx.fragment.app.Fragment
 import com.example.labexam02.databinding.ActivityMainBinding
 
@@ -64,22 +66,12 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun showDialog(): Boolean{
-        val dialog= Dialog(this)
-        dialog.setContentView(R.layout.add_expense)
-        dialog.show()
-        dialog.window!!.setLayout(ViewGroup.LayoutParams.MATCH_PARENT, 1200)
-        dialog.window!!.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
-        dialog.window!!.attributes.windowAnimations=R.style.DialogAnimation
-        dialog.window!!.setGravity(Gravity.BOTTOM)
-        dialog.setOnDismissListener {
-            restoreBottomNavigationSelection()
-        }
-
+        val dialogBox= DialogBox_Class();
+        dialogBox.show(supportFragmentManager,"CustomAddExpense");
         return true;
-
     }
 
-    private fun restoreBottomNavigationSelection() {
+    public fun restoreBottomNavigationSelection() {
         val currentFragment = supportFragmentManager.findFragmentById(R.id.frame)
 
         when (currentFragment) {
