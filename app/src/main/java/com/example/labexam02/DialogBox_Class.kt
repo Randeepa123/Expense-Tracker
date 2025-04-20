@@ -22,7 +22,7 @@ class DialogBox_Class:DialogFragment() {
     override fun onStart() {
         super.onStart()
         dialog?.window?.apply {
-            setLayout(ViewGroup.LayoutParams.MATCH_PARENT, 1200)
+            setLayout(ViewGroup.LayoutParams.MATCH_PARENT, 1350)
             setBackgroundDrawableResource(android.R.color.transparent)
             setGravity(Gravity.BOTTOM)
             attributes.windowAnimations =R.style.DialogAnimation;
