@@ -1,16 +1,36 @@
 package com.example.labexam02
 
 import android.content.DialogInterface
-import android.graphics.Color
-import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
+import android.renderscript.ScriptGroup
 import android.view.Gravity
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
+import android.widget.TextView
+import android.widget.Toast
 import androidx.fragment.app.DialogFragment
 
 class DialogBox_Class:DialogFragment() {
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        val etTitle=view.findViewById<TextView>(R.id.editTitle);
+        val etAmount=view.findViewById<TextView>(R.id.editExpenseAmount);
+        val etBtnSubmit=view.findViewById<Button>(R.id.buttonSubmit);
+
+        etBtnSubmit.setOnClickListener {
+            val name = etTitle.text.toString()
+            val amount = etAmount.text.toString().toIntOrNull() ?: 0
+
+            dialog?.dismiss();
+            Toast.makeText(requireContext(), "Name: $name, Amount: $amount", Toast.LENGTH_SHORT).show()
+
+        }
+
+    }
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
