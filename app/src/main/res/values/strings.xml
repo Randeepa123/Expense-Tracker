@@ -37,6 +37,7 @@
     <string name="Achievements">Achievements</string>
     <string name="Add_your_amount_here">Add Your Amount Here</string>
     <string name="Add_Expense_Title">Add Expense Title Here</string>
+    <string name="Add_Income_Title">Add Income Title Here</string>
 
     <string-array name="ExpenseOrIncomeArray">
         <item>Income</item>
