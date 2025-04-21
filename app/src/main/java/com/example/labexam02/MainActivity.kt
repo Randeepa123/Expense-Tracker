@@ -1,6 +1,7 @@
 package com.example.labexam02
 
 import android.app.Dialog
+import android.content.Context
 import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
@@ -15,6 +16,8 @@ import androidx.core.view.WindowInsetsCompat
 import androidx.fragment.app.DialogFragment
 import androidx.fragment.app.Fragment
 import com.example.labexam02.databinding.ActivityMainBinding
+import com.google.gson.Gson
+import java.io.File
 
 class MainActivity : AppCompatActivity() {
 
@@ -80,4 +83,6 @@ class MainActivity : AppCompatActivity() {
             is AnalyticFragment -> mainBinding.bottomNavigationView.selectedItemId = R.id.analytics_con
         }
     }
+
+
 }
