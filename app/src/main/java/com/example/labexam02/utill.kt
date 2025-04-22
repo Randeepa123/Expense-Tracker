@@ -6,8 +6,7 @@ import com.google.gson.reflect.TypeToken
 import java.io.File
 
 class utill {
-    val incomeFileName="incomes.json";
-    val expenseFileName="expenses.json";
+    val expenseFileName="Transactions.json";
 
     //saving data as jason file
     fun saveListtoFile(context: Context,fileName: String,data: List<Any>){
@@ -31,45 +30,24 @@ class utill {
 
     //add new item
     fun addAnItem(context: Context, isExpense: Boolean, Title: String, Amount: Double){
-        if(isExpense==true){
-            val expenses=loadDataFromFile<Expense>(context,expenseFileName);
+            val expenses=loadDataFromFile<Transactions>(context,expenseFileName);
             val id=if(expenses.isEmpty())1 else expenses.maxOf { it.id }+1;
-            val newExpense= Expense(id=id, title = Title, amount = Amount);
+            val newExpense= Transactions(id=id, title = Title, amount = Amount,isExpense=isExpense);
             expenses.add(newExpense);
             saveListtoFile(context,expenseFileName,expenses);
-        }else{
-            val incomes=loadDataFromFile<Expense>(context,incomeFileName);
-            val id=if(incomes.isEmpty())1 else incomes.maxOf { it.id }+1;
-            val newExpense= Expense(id=id, title = Title, amount = Amount);
-            incomes.add(newExpense);
-            saveListtoFile(context,incomeFileName,incomes);
-        }
-
     }
 
     //updating an existing Item
     fun updateItem(context: Context,isExpense: Boolean,Title: String,Amount: Double,id:Int){
-        if (isExpense==true){
-            val expenses=loadDataFromFile<Expense>(context,expenseFileName);
+            val expenses=loadDataFromFile<Transactions>(context,expenseFileName);
             val UpdatedExpense=expenses.map { if(it.id==id)it.copy(title = Title, amount = Amount)else it };
             saveListtoFile(context,expenseFileName,UpdatedExpense);
-        }else{
-            val incomes=loadDataFromFile<Expense>(context,incomeFileName);
-            val UpdatedIncome=incomes.map { if(it.id==id)it.copy(title = Title, amount = Amount)else it };
-            saveListtoFile(context,incomeFileName,UpdatedIncome);
-        }
     }
 
     //Deleting an Item
     fun deleteItem(context: Context, id:Int, isExpense: Boolean){
-        if (isExpense==true){
-            val expenses=loadDataFromFile<Expense>(context,expenseFileName);
+            val expenses=loadDataFromFile<Transactions>(context,expenseFileName);
             val filteredExpenses=expenses.filter { it.id!=id };
             saveListtoFile(context,expenseFileName,filteredExpenses);
-        }else{
-            val incomes=loadDataFromFile<Expense>(context,incomeFileName);
-            val filteredIncomes=incomes.filter { it.id!=id };
-            saveListtoFile(context,incomeFileName,filteredIncomes);
-        }
     }
 }

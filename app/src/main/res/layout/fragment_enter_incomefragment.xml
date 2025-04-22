@@ -14,7 +14,7 @@
 
     <!-- Amount Display -->
     <TextView
-        android:id="@+id/label_add_expense"
+        android:id="@+id/label_add_income"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="5dp"
@@ -27,7 +27,7 @@
         app:layout_constraintTop_toBottomOf="@id/payment_type_container" />
 
     <EditText
-        android:id="@+id/editTitle"
+        android:id="@+id/editIncomeTitle"
         android:layout_width="match_parent"
         android:layout_height="59dp"
         android:layout_marginStart="0dp"
@@ -40,7 +40,7 @@
         android:textAlignment="center" />
 
     <EditText
-        android:id="@+id/editExpenseAmount"
+        android:id="@+id/editIncomeAmount"
         android:layout_width="match_parent"
         android:layout_height="59dp"
         android:layout_marginStart="0dp"
@@ -53,7 +53,7 @@
         android:inputType="number"/>
 
     <Button
-        android:id="@+id/buttonSubmit"
+        android:id="@+id/buttonIncomeSubmit"
         android:layout_marginTop="250dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

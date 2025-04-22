@@ -5,6 +5,9 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
+import android.widget.TextView
+import android.widget.Toast
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -16,7 +19,7 @@ private const val ARG_PARAM2 = "param2"
  * Use the [enterExpensefragment.newInstance] factory method to
  * create an instance of this fragment.
  */
-class enterExpensefragment : Fragment() {
+class enterExpensefragment() : Fragment() {
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
@@ -35,6 +38,40 @@ class enterExpensefragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_enter_expensefragment, container, false)
+    }
+
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+
+        val newUtill= utill();
+
+        //getting user inputs
+        val expenseTitle=view?.findViewById<TextView>(R.id.editExpenseTitle);
+        val expenseAmount=view?.findViewById<TextView>(R.id.editExpenseAmount);
+        val expenseSubmitButton=view?.findViewById<Button>(R.id.buttonExpenseSubmit);
+
+        expenseSubmitButton?.setOnClickListener {
+            val titleText = expenseTitle?.text.toString()
+            val amountText = expenseAmount?.text.toString()
+
+            if (titleText.isNotEmpty() && amountText.isNotEmpty()) {
+                val amountDouble = amountText.toDoubleOrNull()
+
+                if (amountDouble != null) {
+                    newUtill.addAnItem(requireContext(), true, titleText, amountDouble)
+
+                    Toast.makeText(requireContext(), "Expense saved!", Toast.LENGTH_SHORT).show()
+                } else {
+                    Toast.makeText(requireContext(), "Invalid amount", Toast.LENGTH_SHORT).show()
+                }
+            } else {
+                Toast.makeText(requireContext(), "Please fill all fields", Toast.LENGTH_SHORT).show()
+            }
+        }
+
+
     }
 
     companion object {

@@ -1,13 +1,9 @@
 package com.example.labexam02
 
-data class Income(
+data class Transactions(
     val id:Int,
     val title:String,
-    val amount:Double
+    val amount:Double,
+    val isExpense: Boolean
 )
 
-data class Expense(
-    val id:Int,
-    val title:String,
-    val amount:Double
-)

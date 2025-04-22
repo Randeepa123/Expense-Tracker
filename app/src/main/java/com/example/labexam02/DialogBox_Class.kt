@@ -19,9 +19,6 @@ class DialogBox_Class:DialogFragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val etTitle=view.findViewById<TextView>(R.id.editTitle);
-        val etAmount=view.findViewById<TextView>(R.id.editExpenseAmount);
-        val etBtnSubmit=view.findViewById<Button>(R.id.buttonSubmit);
         val selectedCategory=view.findViewById<Spinner>(R.id.btn_cash);
 
 
