@@ -1,12 +1,17 @@
 package com.example.labexam02
 
+import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageButton
 import android.widget.TextView
+import androidx.fragment.app.FragmentManager
 import androidx.recyclerview.widget.RecyclerView
 
-class FinanceAdapter(private val items: List<Transactions>) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
+class FinanceAdapter(private val items: List<Transactions>,private val context: Context,private val fragmentManager: FragmentManager) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
+
+
     private val TYPE_EXPENSE = 1
     private val TYPE_INCOME = 0
 
@@ -30,26 +35,40 @@ class FinanceAdapter(private val items: List<Transactions>) : RecyclerView.Adapt
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
         val item = items[position]
         if (holder is ExpenseViewHolder) {
-            holder.bind(item)
+            holder.bind(item,context,fragmentManager)
         } else if (holder is IncomeViewHolder) {
-            holder.bind(item)
+            holder.bind(item,context,fragmentManager)
         }
+
     }
 
     class ExpenseViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        fun bind(item: Transactions) {
+        fun bind(item: Transactions, context: Context, fragmentManager: FragmentManager) {
             // Bind data to expense card views
             itemView.findViewById<TextView>(R.id.expenseCardcategory).text = item.title
             itemView.findViewById<TextView>(R.id.expenseAmount).text = "- Rs. ${item.amount}"
+            val btnEdit=itemView.findViewById<ImageButton>(R.id.btnEditTransactions);
+            btnEdit.setOnClickListener {
+                val dialog = updateTransaction.newInstance(item)
+                dialog.show(fragmentManager, "edit_transactions")
+            }
         }
     }
 
     class IncomeViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        fun bind(item: Transactions) {
+        fun bind(item: Transactions,context: Context, fragmentManager: FragmentManager) {
             // Bind data to income card views
             itemView.findViewById<TextView>(R.id.incomeCardcategory).text = item.title
             itemView.findViewById<TextView>(R.id.incomeAmount).text = "+ Rs. ${item.amount}"
+            val btnEdit=itemView.findViewById<ImageButton>(R.id.btnEditTransactions);
+            btnEdit.setOnClickListener {
+                val dialog = updateTransaction.newInstance(item)
+                dialog.show(fragmentManager, "edit_transactions")
+            }
         }
     }
+
+
+
 
 }

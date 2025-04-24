@@ -13,6 +13,7 @@
     <string name="shopping">Shopping</string>
     <string name="Add_New_Expenses">Add New Expenses</string>
     <string name="Add_New_Income">Add New Income</string>
+    <string name="Update_the_Transaction">Update the Transaction</string>
     <string name="Rupees">Rs</string>
     <string name="amount">1820.00</string>
     <string name="Stats">Stats</string>
@@ -38,6 +39,7 @@
     <string name="Add_your_amount_here">Add Your Amount Here</string>
     <string name="Add_Expense_Title">Add Expense Title Here</string>
     <string name="Add_Income_Title">Add Income Title Here</string>
+    <string name="Update_Title">Update Title </string>
 
     <string-array name="ExpenseOrIncomeArray">
         <item>Income</item>

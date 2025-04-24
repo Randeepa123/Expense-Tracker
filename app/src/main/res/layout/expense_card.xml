@@ -23,7 +23,7 @@
                 android:layout_height="32dp"
                 android:background="@drawable/circle_yellow"
                 android:padding="6dp"
-                android:src="@drawable/ic_bus" />
+                android:src="@drawable/ic_expense" />
 
             <LinearLayout
                 android:layout_width="wrap_content"
@@ -59,7 +59,8 @@
                 android:layout_height="wrap_content"
                 android:text="1000.00"
                 android:layout_marginTop="10dp"
-                android:layout_marginStart="50dp"
+                android:layout_marginStart="30dp"
+                android:layout_marginEnd="10dp"
                 android:textColor="@color/black"
                 android:textSize="16sp" />
 
@@ -71,7 +72,7 @@
                 android:layout_marginTop="8dp">
 
                 <ImageButton
-                    android:id="@+id/btnEditIncome"
+                    android:id="@+id/btnEditTransactions"
                     android:layout_width="36dp"
                     android:layout_height="36dp"
                     android:background="?attr/selectableItemBackgroundBorderless"
