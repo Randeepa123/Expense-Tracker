@@ -66,7 +66,7 @@
             android:layout_width="0dp"
             android:layout_weight="1"
             android:layout_height="wrap_content"
-            android:text="Select a date"
+            android:hint="Select a date"
             android:textSize="18sp"
             android:padding="8dp"
             android:background="@drawable/edit_text_background"/>
@@ -79,9 +79,25 @@
 
     </LinearLayout>
 
+    <androidx.appcompat.widget.AppCompatSpinner
+        android:id="@+id/expenseCategorySpinner"
+        android:layout_width="match_parent"
+        android:layout_height="59dp"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="350dp"
+        android:layout_marginEnd="0dp"
+        android:background="@drawable/shopping_spinner"
+        android:ems="10"
+        android:entries="@array/category"
+        android:hint="@string/Add_your_amount_here"
+        android:inputType="number"
+        android:textAlignment="center" />
+
+
+
     <Button
         android:id="@+id/buttonExpenseSubmit"
-        android:layout_marginTop="350dp"
+        android:layout_marginTop="450dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Submit" />

@@ -47,8 +47,10 @@ class FinanceAdapter(private val items: MutableList<Transactions>,private val co
     class ExpenseViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         fun bind(item: Transactions, context: Context, fragmentManager: FragmentManager) {
             // Bind data to expense card views
-            itemView.findViewById<TextView>(R.id.expenseCardcategory).text = item.title
+            itemView.findViewById<TextView>(R.id.expenseCardcategory).text = item.category
+            itemView.findViewById<TextView>(R.id.smalltitle).text = item.title
             itemView.findViewById<TextView>(R.id.expenseAmount).text = "- Rs. ${item.amount}"
+            itemView.findViewById<TextView>(R.id.Expensedate).text=item.date
             val btnEdit=itemView.findViewById<ImageButton>(R.id.btnEditTransactions);
             val btnDelete =itemView.findViewById<ImageButton>(R.id.btnDeleteTransaction)
             btnEdit.setOnClickListener {
@@ -66,8 +68,10 @@ class FinanceAdapter(private val items: MutableList<Transactions>,private val co
     class IncomeViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         fun bind(item: Transactions,context: Context, fragmentManager: FragmentManager) {
             // Bind data to income card views
-            itemView.findViewById<TextView>(R.id.incomeCardcategory).text = item.title
+            itemView.findViewById<TextView>(R.id.incomeCardcategory).text = item.category
+            itemView.findViewById<TextView>(R.id.smalltitle).text = item.title
             itemView.findViewById<TextView>(R.id.incomeAmount).text = "+ Rs. ${item.amount}"
+            itemView.findViewById<TextView>(R.id.IncomeDate).text=item.date
             val btnEdit=itemView.findViewById<ImageButton>(R.id.btnEditTransactions);
             val btnDelete =itemView.findViewById<ImageButton>(R.id.btnDeleteTransaction)
             btnEdit.setOnClickListener {

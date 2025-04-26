@@ -1,5 +1,6 @@
 package com.example.labexam02
 
+import android.app.DatePickerDialog
 import android.os.Bundle
 import android.util.Log
 import androidx.fragment.app.Fragment
@@ -7,8 +8,11 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.ImageView
+import android.widget.Spinner
 import android.widget.TextView
 import android.widget.Toast
+import java.util.Calendar
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -54,15 +58,25 @@ class enterIncomefragment() : Fragment() {
         val incomeAmount=view?.findViewById<TextView>(R.id.editIncomeAmount);
         val incomeSubmitButton=view?.findViewById<Button>(R.id.buttonIncomeSubmit);
 
+        val textViewDate = view.findViewById<TextView>(R.id.textViewIncomeDate)
+        val imageViewCalendar = view.findViewById<ImageView>(R.id.imageViewIncomeCalendar)
+        val category = view.findViewById<Spinner>(R.id.incomeCategorySpinner)
+
+        imageViewCalendar.setOnClickListener {
+            showDatePicker(textViewDate)
+        }
+
         incomeSubmitButton?.setOnClickListener {
             val titleText = incomeTitle?.text.toString()
             val amountText = incomeAmount?.text.toString()
+            val dateText = textViewDate.text.toString()
+            val selectedCategory = category.selectedItem.toString()
 
-            if (titleText.isNotEmpty() && amountText.isNotEmpty()) {
+            if (titleText.isNotEmpty() && amountText.isNotEmpty()&& dateText.isNotEmpty()) {
                 val amountDouble = amountText.toDoubleOrNull()
 
                 if (amountDouble != null) {
-                    newUtill.addAnItem(requireContext(), false, titleText, amountDouble)
+                    newUtill.addAnItem(requireContext(), false, titleText, amountDouble,dateText,selectedCategory)
                     Log.d("DialogFragment", "Button clicked")
 
                     Toast.makeText(requireContext(), "Income saved!", Toast.LENGTH_SHORT).show()
@@ -73,6 +87,23 @@ class enterIncomefragment() : Fragment() {
                 Toast.makeText(requireContext(), "Please fill all fields", Toast.LENGTH_SHORT).show()
             }
         }
+    }
+
+    private fun showDatePicker(textView: TextView) {
+        val calendar = Calendar.getInstance()
+
+        val datePickerDialog = DatePickerDialog(
+            requireContext(),
+            { _, year, month, dayOfMonth ->
+                val selectedDate = "${dayOfMonth}/${month + 1}/$year"
+                textView.text = selectedDate
+            },
+            calendar.get(Calendar.YEAR),
+            calendar.get(Calendar.MONTH),
+            calendar.get(Calendar.DAY_OF_MONTH)
+        )
+
+        datePickerDialog.show()
     }
 
     companion object {

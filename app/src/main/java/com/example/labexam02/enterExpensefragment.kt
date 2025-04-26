@@ -8,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.ImageView
+import android.widget.Spinner
 import android.widget.TextView
 import android.widget.Toast
 import java.util.Calendar
@@ -51,12 +52,13 @@ class enterExpensefragment() : Fragment() {
         val newUtill= utill();
 
         //getting user inputs
-        val expenseTitle=view?.findViewById<TextView>(R.id.editExpenseTitle);
-        val expenseAmount=view?.findViewById<TextView>(R.id.editExpenseAmount);
-        val expenseSubmitButton=view?.findViewById<Button>(R.id.buttonExpenseSubmit);
+        val expenseTitle=view.findViewById<TextView>(R.id.editExpenseTitle);
+        val expenseAmount=view.findViewById<TextView>(R.id.editExpenseAmount);
+        val expenseSubmitButton=view.findViewById<Button>(R.id.buttonExpenseSubmit);
 
         val textViewDate = view.findViewById<TextView>(R.id.textViewDate)
         val imageViewCalendar = view.findViewById<ImageView>(R.id.imageViewCalendar)
+        val category=view.findViewById<Spinner>(R.id.expenseCategorySpinner)
 
         imageViewCalendar.setOnClickListener {
             showDatePicker(textViewDate)
@@ -65,12 +67,14 @@ class enterExpensefragment() : Fragment() {
         expenseSubmitButton?.setOnClickListener {
             val titleText = expenseTitle?.text.toString()
             val amountText = expenseAmount?.text.toString()
+            val dateText = textViewDate.text.toString()
+            val selectedCategory = category.selectedItem.toString()
 
-            if (titleText.isNotEmpty() && amountText.isNotEmpty()) {
+            if (titleText.isNotEmpty() && amountText.isNotEmpty() && dateText.isNotEmpty()) {
                 val amountDouble = amountText.toDoubleOrNull()
 
                 if (amountDouble != null) {
-                    newUtill.addAnItem(requireContext(), true, titleText, amountDouble)
+                    newUtill.addAnItem(requireContext(), true, titleText, amountDouble,dateText,selectedCategory)
 
                     Toast.makeText(requireContext(), "Expense saved!", Toast.LENGTH_SHORT).show()
                 } else {

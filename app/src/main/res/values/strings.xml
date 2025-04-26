@@ -52,5 +52,9 @@
         <item>Food</item>
         <item>Gifts</item>
     </string-array>
+    <string-array name="Incomecategory">
+        <item>Salary</item>
+        <item>Freelancing</item>
+    </string-array>
 
 </resources>

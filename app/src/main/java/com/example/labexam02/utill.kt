@@ -4,6 +4,7 @@ import android.content.Context
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
 import java.io.File
+import java.util.Date
 
 class utill {
     val expenseFileName="Transactions.json";
@@ -29,18 +30,18 @@ class utill {
     }
 
     //add new item
-    fun addAnItem(context: Context, isExpense: Boolean, Title: String, Amount: Double){
+    fun addAnItem(context: Context, isExpense: Boolean, Title: String, Amount: Double, date: String,category: String){
             val expenses=loadDataFromFile<Transactions>(context,expenseFileName);
             val id=if(expenses.isEmpty())1 else expenses.maxOf { it.id }+1;
-            val newExpense= Transactions(id=id, title = Title, amount = Amount,isExpense=isExpense);
+            val newExpense= Transactions(id=id, title = Title, amount = Amount,isExpense=isExpense,date=date, category = category );
             expenses.add(newExpense);
             saveListtoFile(context,expenseFileName,expenses);
     }
 
     //updating an existing Item
-    fun updateItem(context: Context,isExpense: Boolean,Title: String,Amount: Double,id:Int){
+    fun updateItem(context: Context,isExpense: Boolean,Title: String,Amount: Double,id:Int,date: String,category: String){
             val expenses=loadDataFromFile<Transactions>(context,expenseFileName);
-            val UpdatedExpense=expenses.map { if(it.id==id)it.copy(title = Title, amount = Amount)else it };
+            val UpdatedExpense=expenses.map { if(it.id==id)it.copy(title = Title, amount = Amount,date=date, category = category)else it };
             saveListtoFile(context,expenseFileName,UpdatedExpense);
 
 

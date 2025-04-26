@@ -83,16 +83,9 @@ class DialogBox_Class:DialogFragment() {
 
 
     private fun replaceAdditemFragment(fragment: Fragment,isIncome:Boolean): Boolean{
-        val shoppingIconSpinner=view?.findViewById<Spinner>(R.id.btn_shopping);
         childFragmentManager.beginTransaction()
         .replace(R.id.AmountDisplayFragment,fragment)
         .commit()
-
-        if(isIncome==true){
-            shoppingIconSpinner?.visibility = View.INVISIBLE
-        }else{
-            shoppingIconSpinner?.visibility = View.VISIBLE
-        }
         return true}
 }
 

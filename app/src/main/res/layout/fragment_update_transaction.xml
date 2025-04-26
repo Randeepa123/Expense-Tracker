@@ -58,16 +58,44 @@
         android:ems="10"
         android:hint="@string/Add_your_amount_here"
         android:inputType="number"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="250dp"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:padding="10dp"
+        android:background="@drawable/edit_text_background">
+
+        <TextView
+            android:id="@+id/textViewDateUpdate"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:hint="Select a date"
+            android:textSize="18sp"
+            android:padding="8dp"
+            android:background="@drawable/edit_text_background"/>
+
+        <ImageView
+            android:id="@+id/imageViewCalendarUpdate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_calendar"/>
+
+    </LinearLayout>
+
+
 
     <Button
         android:id="@+id/buttonUpdateTransaction"
-        android:layout_marginTop="250dp"
+        android:layout_marginTop="350dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Update" />
     <Button
         android:id="@+id/buttoncancellTransaction"
-        android:layout_marginTop="250dp"
+        android:layout_marginTop="350dp"
         android:layout_marginStart="125dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

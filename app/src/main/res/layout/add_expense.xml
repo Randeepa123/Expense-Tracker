@@ -10,8 +10,9 @@
     <!-- Payment Type Selection -->
     <LinearLayout
         android:id="@+id/payment_type_container"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="46dp"
+        android:layout_marginEnd="200dp"
         android:gravity="center"
         android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
@@ -31,19 +32,7 @@
             android:textColor="@android:color/black"
             android:textSize="16sp" />
 
-        <androidx.appcompat.widget.AppCompatSpinner
-            android:id="@+id/btn_shopping"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_weight="1"
-            android:background="@drawable/category_spinner"
-            android:entries="@array/category"
-            android:gravity="center"
-            android:padding="12dp"
-            android:text="@string/shopping"
-            android:textColor="@android:color/black"
-            android:textSize="16sp" />
+
     </LinearLayout>
 
     <FrameLayout

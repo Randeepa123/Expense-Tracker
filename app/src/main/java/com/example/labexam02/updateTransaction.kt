@@ -1,13 +1,17 @@
 package com.example.labexam02
 
+import android.app.DatePickerDialog
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.ImageView
+import android.widget.Spinner
 import android.widget.TextView
 import androidx.fragment.app.DialogFragment
+import java.util.Calendar
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -46,17 +50,28 @@ class updateTransaction(val item: Transactions) : DialogFragment() {
 
              val updateTitle=view.findViewById<TextView>(R.id.UpdateIncomeTitle);
              val updateAmount=view.findViewById<TextView>(R.id.UpdateIncomeAmount);
+             val textViewDate = view.findViewById<TextView>(R.id.textViewDateUpdate)
+             val imageViewCalendar = view.findViewById<ImageView>(R.id.imageViewCalendarUpdate)
              val Updatebtn=view.findViewById<Button>(R.id.buttonUpdateTransaction);
              val Btncancell=view.findViewById<Button>(R.id.buttoncancellTransaction);
+
+        imageViewCalendar.setOnClickListener {
+            showDatePicker(textViewDate)
+        }
 
 
             updateTitle.text = item.title
             updateAmount.text = item.amount.toString()
+            textViewDate.text=item.date.toString()
+            val category=item.category.toString()
             Updatebtn.setOnClickListener {
                 val newTitle = updateTitle.text.toString()
                 val newAmount = updateAmount.text.toString().toDoubleOrNull() ?: 0.0
+                val date=textViewDate.text.toString()
+                val category=category
+
                 val utill = utill()
-                utill.updateItem(context=requireContext(),isExpense =item.isExpense,Amount=newAmount,Title=newTitle,id=item.id,)
+                utill.updateItem(context=requireContext(),isExpense =item.isExpense,Amount=newAmount,Title=newTitle,id=item.id,date=date, category =category )
                 parentFragment?.let { fragment ->
                     if (fragment is HomeFragment) {
                         fragment.refreshData() // This will reload the transactions and update the RecyclerView
@@ -71,6 +86,23 @@ class updateTransaction(val item: Transactions) : DialogFragment() {
 
 
 
+    }
+
+    private fun showDatePicker(textView: TextView) {
+        val calendar = Calendar.getInstance()
+
+        val datePickerDialog = DatePickerDialog(
+            requireContext(),
+            { _, year, month, dayOfMonth ->
+                val selectedDate = "${dayOfMonth}/${month + 1}/$year"
+                textView.text = selectedDate
+            },
+            calendar.get(Calendar.YEAR),
+            calendar.get(Calendar.MONTH),
+            calendar.get(Calendar.DAY_OF_MONTH)
+        )
+
+        datePickerDialog.show()
     }
 
 
