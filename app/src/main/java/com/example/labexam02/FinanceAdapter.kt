@@ -9,11 +9,13 @@ import android.widget.TextView
 import androidx.fragment.app.FragmentManager
 import androidx.recyclerview.widget.RecyclerView
 
-class FinanceAdapter(private val items: List<Transactions>,private val context: Context,private val fragmentManager: FragmentManager) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
+class FinanceAdapter(private val items: MutableList<Transactions>,private val context: Context,private val fragmentManager: FragmentManager) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
 
     private val TYPE_EXPENSE = 1
     private val TYPE_INCOME = 0
+
+
 
     override fun getItemViewType(position: Int): Int {
         return if (items[position].isExpense) TYPE_EXPENSE else TYPE_INCOME
@@ -48,8 +50,14 @@ class FinanceAdapter(private val items: List<Transactions>,private val context: 
             itemView.findViewById<TextView>(R.id.expenseCardcategory).text = item.title
             itemView.findViewById<TextView>(R.id.expenseAmount).text = "- Rs. ${item.amount}"
             val btnEdit=itemView.findViewById<ImageButton>(R.id.btnEditTransactions);
+            val btnDelete =itemView.findViewById<ImageButton>(R.id.btnDeleteTransaction)
             btnEdit.setOnClickListener {
                 val dialog = updateTransaction.newInstance(item)
+                dialog.show(fragmentManager, "edit_transactions")
+            }
+
+            btnDelete.setOnClickListener {
+                val dialog = DeleteConfirmBox.newInstance(item)
                 dialog.show(fragmentManager, "edit_transactions")
             }
         }
@@ -61,11 +69,22 @@ class FinanceAdapter(private val items: List<Transactions>,private val context: 
             itemView.findViewById<TextView>(R.id.incomeCardcategory).text = item.title
             itemView.findViewById<TextView>(R.id.incomeAmount).text = "+ Rs. ${item.amount}"
             val btnEdit=itemView.findViewById<ImageButton>(R.id.btnEditTransactions);
+            val btnDelete =itemView.findViewById<ImageButton>(R.id.btnDeleteTransaction)
             btnEdit.setOnClickListener {
                 val dialog = updateTransaction.newInstance(item)
                 dialog.show(fragmentManager, "edit_transactions")
             }
+            btnDelete.setOnClickListener {
+                val dialog = DeleteConfirmBox.newInstance(item)
+                dialog.show(fragmentManager, "edit_transactions")
+            }
         }
+    }
+
+    fun updateData(newList: List<Transactions>) {
+        items.clear()
+        items.addAll(newList)
+        notifyDataSetChanged() // Notify the adapter that data has changed
     }
 
 

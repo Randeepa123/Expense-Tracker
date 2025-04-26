@@ -42,6 +42,8 @@ class utill {
             val expenses=loadDataFromFile<Transactions>(context,expenseFileName);
             val UpdatedExpense=expenses.map { if(it.id==id)it.copy(title = Title, amount = Amount)else it };
             saveListtoFile(context,expenseFileName,UpdatedExpense);
+
+
     }
 
     //Deleting an Item

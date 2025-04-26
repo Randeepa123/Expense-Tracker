@@ -6,7 +6,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
-import android.widget.TextView
 import androidx.fragment.app.DialogFragment
 
 // TODO: Rename parameter arguments, choose names that match
@@ -16,10 +15,10 @@ private const val ARG_PARAM2 = "param2"
 
 /**
  * A simple [Fragment] subclass.
- * Use the [updateTransaction.newInstance] factory method to
+ * Use the [DeleteConfirmBox.newInstance] factory method to
  * create an instance of this fragment.
  */
-class updateTransaction(val item: Transactions) : DialogFragment() {
+class DeleteConfirmBox(val item: Transactions) : DialogFragment() {
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
@@ -37,43 +36,28 @@ class updateTransaction(val item: Transactions) : DialogFragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_update_transaction, container, false)
+        return inflater.inflate(R.layout.fragment_delete_confirm_box, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        val confirmBtn=view.findViewById<Button>(R.id.btn_delete)
+        val cancellBtn=view.findViewById<Button>(R.id.btn_cancel)
 
-
-             val updateTitle=view.findViewById<TextView>(R.id.UpdateIncomeTitle);
-             val updateAmount=view.findViewById<TextView>(R.id.UpdateIncomeAmount);
-             val Updatebtn=view.findViewById<Button>(R.id.buttonUpdateTransaction);
-             val Btncancell=view.findViewById<Button>(R.id.buttoncancellTransaction);
-
-
-            updateTitle.text = item.title
-            updateAmount.text = item.amount.toString()
-            Updatebtn.setOnClickListener {
-                val newTitle = updateTitle.text.toString()
-                val newAmount = updateAmount.text.toString().toDoubleOrNull() ?: 0.0
-                val utill = utill()
-                utill.updateItem(context=requireContext(),isExpense =item.isExpense,Amount=newAmount,Title=newTitle,id=item.id,)
-                parentFragment?.let { fragment ->
-                    if (fragment is HomeFragment) {
-                        fragment.refreshData() // This will reload the transactions and update the RecyclerView
-                    }
+        confirmBtn.setOnClickListener {
+            val utill= utill()
+            utill.deleteItem(requireContext(),item.id, isExpense = item.isExpense)
+            parentFragment?.let { fragment ->
+                if (fragment is HomeFragment) {
+                    fragment.refreshData() // This will reload the transactions and update the RecyclerView
                 }
+            }
+            dismiss();
+        }
+            cancellBtn.setOnClickListener {
                 dismiss();
             }
-
-            Btncancell.setOnClickListener {
-                dismiss();
-            }
-
-
-
-    }
-
-
+        }
 
 
     companion object {
@@ -83,11 +67,11 @@ class updateTransaction(val item: Transactions) : DialogFragment() {
          *
          * @param param1 Parameter 1.
          * @param param2 Parameter 2.
-         * @return A new instance of fragment updateTransaction.
+         * @return A new instance of fragment DeleteConfirmBox.
          */
         // TODO: Rename and change types and number of parameters
         @JvmStatic
-        fun newInstance(items: Transactions) =
-            updateTransaction(item = items)
-            }
+        fun newInstance(item: Transactions) =
+            DeleteConfirmBox(item = item)
     }
+}

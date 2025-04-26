@@ -80,7 +80,7 @@
                     android:src="@drawable/ic_edit" />
 
                 <ImageButton
-                    android:id="@+id/btnDeleteIncome"
+                    android:id="@+id/btnDeleteTransaction"
                     android:layout_width="36dp"
                     android:layout_height="36dp"
                     android:layout_marginStart="16dp"
