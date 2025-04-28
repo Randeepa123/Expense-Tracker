@@ -89,8 +89,6 @@ class AnalyticFragment : Fragment() {
         // Request notification permission
         requestNotificationPermission()
 
-        // Initialize UI
-        setupWeekSelector()
 
         // Load and process transaction data
         loadTransactions()
@@ -103,15 +101,6 @@ class AnalyticFragment : Fragment() {
         checkBudgetExceeded()
     }
 
-    private fun setupWeekSelector() {
-        // Set current week text
-        binding.tvWeekDropdown.text = getCurrentWeekText()
-
-        // Setup click listener for week selection
-        binding.tvWeekDropdown.setOnClickListener {
-            // You can implement week selection dialog here
-        }
-    }
 
     private fun getCurrentWeekText(): String {
         val calendar = Calendar.getInstance()

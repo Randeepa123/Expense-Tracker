@@ -36,20 +36,6 @@
         app:layout_constraintTop_toBottomOf="@+id/tvStatsTitle" />
 
     <!-- Week Dropdown -->
-    <TextView
-        android:id="@+id/tvWeekDropdown"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@drawable/rounded_button_light_green"
-        android:paddingStart="16dp"
-        android:paddingTop="8dp"
-        android:paddingEnd="16dp"
-        android:paddingBottom="8dp"
-        android:text="@string/Week"
-        android:textColor="@color/black"
-        app:layout_constraintBottom_toBottomOf="@+id/tvExpensesLabel"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/tvExpensesLabel" />
 
     <!-- MPAndroidChart Bar Chart -->
     <com.github.mikephil.charting.charts.BarChart
